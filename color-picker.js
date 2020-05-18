@@ -21,8 +21,7 @@ class ColorPicker extends LitElement {
     this.currentHex = "";
     this.prop3 = true;
     this.prop4 = 'hex';
-    this.addEventListener('stuff-loaded', (e) => { this.currentHex = e.detail } );
-    this.loadHex();
+
     
   }
   // Implement `render` to define a template for your element.
@@ -36,6 +35,11 @@ class ColorPicker extends LitElement {
   
 
     return html`
+      <div id="sketch"> </div>
+      <div class="title">
+        <h1>Color Slider</h1>
+      </div>
+      
       <!-- text binding -->
       <div>${this.prop1}</div>
 
@@ -43,7 +47,7 @@ class ColorPicker extends LitElement {
       <div id="${this.prop2}">attribute binding</div>
       
       <!-- attribute binding -->
-      <div>${this.currentHex}</div>
+      <div>Color Selected: Hex ${this.currentHex}</div>
 
       <!-- boolean attribute binding -->
       <div>
@@ -52,9 +56,9 @@ class ColorPicker extends LitElement {
       </div>
 
       <!-- property binding -->
-      <div>
+      <div id="b">
         property binding
-        <input type="text" .value="${this.currentHex}"/>
+        <input type="text" .value="#${this.currentHex}"/>
       </div>
 
       <!-- event handler binding -->
@@ -63,13 +67,18 @@ class ColorPicker extends LitElement {
       </div>
     `;
 
-  onChange = e => {
+  /* onChange = e => {
     this.setState({ currentHex: e.target.value });
-  };
-
-  
-    
+  }; */
   }
+updated(changedProperties) {
+    changedProperties.forEach((oldHex, propName) => {
+      console.log(`${propName} changed. oldHex: ${oldHex}`);
+    });
+    let b = this.shadowRoot.getElementById("b");
+    b.focus();
+  }
+  
   clickHandler(e) {
     console.log(e.target);
   }

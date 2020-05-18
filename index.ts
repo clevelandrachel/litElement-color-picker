@@ -3,6 +3,6 @@ import TextField, {Input} from "@material/react-text-field";
 import '@material/react-text-field/index.scss';
 import { useEffect, useState, useRef } from React;
 
-import './index.css';
+import './index.scss';
 
 
