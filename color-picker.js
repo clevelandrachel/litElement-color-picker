@@ -24,15 +24,7 @@ class ColorPicker extends LitElement {
 
     
   }
-  // Implement `render` to define a template for your element.
   render(){
-    /**
-     * Return a lit-html `TemplateResult`.
-     *
-     * To create a `TemplateResult`, tag a JavaScript template literal
-     * with the `html` helper function.
-     */
-  
 
     return html`
       <div id="sketch"> </div>
@@ -47,7 +39,7 @@ class ColorPicker extends LitElement {
       <div id="${this.prop2}">attribute binding</div>
       
       <!-- attribute binding -->
-      <div>Color Selected: Hex ${this.currentHex}</div>
+      <div>Current color: Hex ${this.currentHex}</div>
 
       <!-- boolean attribute binding -->
       <div>
