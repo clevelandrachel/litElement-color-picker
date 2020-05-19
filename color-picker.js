@@ -22,7 +22,7 @@ class ColorPicker extends LitElement {
   }
   constructor() {
     super();
-    this.prop1 = 'Color Slider';
+    this.prop1 = 'Building Custom Elements for Color Selection and Color Slider';
     this.prop2 = 'mydiv';
     this.currentHex = '';
     this.prop3 = true;
@@ -46,41 +46,10 @@ class ColorPicker extends LitElement {
       <!-- text binding -->
       <div>${this.prop1}</div>
 
-      <!-- attribute binding -->
-      <div id="${this.prop2}">attribute binding</div>
-      
-      <!-- attribute binding -->
-      <div>Current color: # ${this.currentHex}</div>
-
-      <!-- boolean attribute binding -->
-      <div>
-        boolean attribute binding
-        <input type="text" ?disabled="${this.prop3}"/>
-      </div>
-      
-      <!-- property binding -->
-      <div id="h">
-        hex binding
-        <input value={this.state.currentHex} onChange= {this.onChange} />
-      </div>
-
-      <!-- property binding -->
-      <div id="b">
-        property binding
-        <input type="text" .value="#${this.currentHex}" @change=${this.onChange} />
-      </div>
-
-      <!-- event handler binding -->
-      <div>event handler binding
-        <button @click="${this.clickHandler}">click</button>
-      </div>
 
       <!-- event handler binding for random string -->
       <p>Random Color Selection: ${this.hex}</p>
       <button @click="${this.changeColor}">Get Random Color</button>
-
-     
-
     `;
   }
 
