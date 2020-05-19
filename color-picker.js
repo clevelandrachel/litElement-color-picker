@@ -1,5 +1,4 @@
 import { LitElement, html, css, customElement, property } from 'lit-element';
-import { useEffect, useState, useRef } from React;
 import { React, ReactDOM, PropTypes, w3color }  from ReactDOM;
 import { Grid, Typography, Button } from '@material-ui/core';
 
