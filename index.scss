@@ -13,10 +13,6 @@ body {
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   cursor: var(--cursor);
 }
-.title {
-  font-size: 1rem;
-  color: #666;
-}
   
 #outer-grid {
   display: grid;
@@ -75,8 +71,15 @@ body {
 }
   
 #sketch:before {
-    width: -50%;
+    width: 50%;
     content: " ";
-    background-image: url("https://cdn.jsdelivr.net/gh/clevelandrachel/ColorPicker@master/Color-Sketch.png/50/50/");
+    background-image: url("");
+}
 
+div.img{
+    width: 50%;
+    height: 50%;
+}
+  div.img:before {
+content:'.img';
 }
