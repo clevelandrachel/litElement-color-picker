@@ -1,10 +1,10 @@
 import { LitElement, html, css, customElement, property } from 'lit-element';
-import {html, render, directive, NodePart, appendIntoPart} from 'lit-html';
 import { useEffect, useState, useRef } from React;
 import { React, ReactDOM, PropTypes, w3color }  from ReactDOM;
 import { Grid, Typography, Button } from '@material-ui/core';
 
 class ColorPicker extends LitElement {
+
   static get properties() {
 
     return {
@@ -17,6 +17,9 @@ class ColorPicker extends LitElement {
       hex: { reflect: true }
     };
   }
+  static defaultProps = {
+    name: 'ColorSlider'
+  }
   constructor() {
     super();
     this.prop1 = 'Color Slider';
@@ -26,7 +29,10 @@ class ColorPicker extends LitElement {
     this.hex = '#';
     this._hex = '';
     this.state = { currentHex: '' };
+
   }
+
+  
 
   render(){
 
@@ -62,7 +68,6 @@ class ColorPicker extends LitElement {
       <div id="b">
         property binding
         <input type="text" .value="#${this.currentHex}" @change=${this.onChange} />
-
       </div>
 
       <!-- event handler binding -->
@@ -73,8 +78,12 @@ class ColorPicker extends LitElement {
       <!-- event handler binding for random string -->
       <p>Random Color Selection: ${this.hex}</p>
       <button @click="${this.changeColor}">Get Random Color</button>
+
+     
+
     `;
   }
+
 
  attributeChangedCallback(name, oldHex, hex) {
     console.log('attribute change: ', hex);
@@ -102,3 +111,4 @@ class ColorPicker extends LitElement {
 }
 
 customElements.define('color-picker', ColorPicker);
+
